@@ -1,3 +1,5 @@
+![logo](https://www.excella.com/wp-content/themes/excella/images/footer-logo.svg)
+
 # AI Application for Entity Resolution
 
 **Question**
