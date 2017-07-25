@@ -16,4 +16,7 @@ After training, the resulting accuracy on a validation set was:
 
 **Visualization of Results**
 
+Visualization of the results was done utilizing Python plotly. The code to generate these visualizations can be found [here](https://github.com/excellalabs/ai-entityres/dashboard/challenge_dashboard_.ipynb)
+. 
+
 https://plot.ly/dashboard/psmith1223:7/view
