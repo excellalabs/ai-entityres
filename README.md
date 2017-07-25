@@ -13,3 +13,7 @@ The technical challenge in this classification problem arises from the fact that
 The provided neural network and code is trained on the Google document that contains a set of words, the sentences in which the words are used, and the links to the Wikipedia pages associated with the words in their context.  The network consists of an input layer that converts the words to GloVE vectors and makes a call to a table housing the number of definitions associated with the word of interest; the DMN that determines which definition is appropriately associated with the word given the context; and an output layer that returns the URL.  
 
 After training, the resulting accuracy on a validation set was:
+
+**Visualization of Results**
+
+https://plot.ly/dashboard/psmith1223:7/view
