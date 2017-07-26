@@ -19,7 +19,7 @@ The provided neural network and code is trained on a subset of the provided Goog
 Visualization of the results was done utilizing Python plotly. The code to generate these visualizations can be found [here](https://github.com/excellalabs/ai-entityres/blob/master/dashboard/challenge_dashboard_.ipynb)
 . 
 
-https://plot.ly/dashboard/psmith1223:7/view
+https://plot.ly/dashboard/psmith1223:8/view
 
 **Execution**
 
