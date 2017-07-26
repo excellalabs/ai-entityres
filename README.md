@@ -10,6 +10,8 @@ NLP with neural networks is most performant when mathematical representations of
 
 The technical challenge in this classification problem arises from the fact that the number of labels used for classification varies by the word to be resolved. Such problems are aptly addressed using a neural network architecture known as a "dynamic memory network," or DMN. DMNs excel at picking a specific answer given an arbitrary set of possible answers by identifying the most relevant words in a context and mapping them to the correct answer. In this case, the question is "which of the available definitions does the word take on in the provided context?"
 
+To implement the DMN, we utilize TensorFlow.  TensorFlow is a popular, open-source tool for deep learning provided by Google.  It allows one to construct a "computational graph" of tensors and operations to be performed on tensors that is then compiled to C and run.  The biggest values added by TensorFlow is its versitility and algorithms: it can be compiled and run on any platform (CPU, GPU, mobile), and leverages extremely powerful optimization algorithms to train model parameters.  Keras and TFLearn sit on top on TensorFlow to enable quick implementation of the tool, implementing GRUt and our custom episodic memory demanded we work with the core language.
+
 The provided neural network and code is trained on a subset of the provided Google documents. URLs were taken to be the definition of the linked text, and tokens within 200kb distance of the link were taken to be context.  We kept only those data points for which the URL appeared at least 200 times in the corpus. Due to the combined demand of computing power and time to train the task of identifying the correct URL given context and link text on an entire corpus, we considered only 1000 mentions. The set of 2015 combined tokens and linked text were embedded as 3d vectors, and the network trained to select the correct link from a set of 270 unique URLs for 2 hrs, using mean cross entropy as the loss.  The initial mean cross entropy was ~18, and it reached 8.3 over 5153 epochs.  This represents a ~22000 factor improvement on the predicted probability distribution over the course of training. It is still a fair error, but, given the considerable improvement in the loss over the initial training period, with more training time, this would be substantially improved if allowed to train for longer.
 
 **Visualization of Results**
@@ -17,4 +19,12 @@ The provided neural network and code is trained on a subset of the provided Goog
 Visualization of the results was done utilizing Python plotly. The code to generate these visualizations can be found [here](https://github.com/excellalabs/ai-entityres/blob/master/dashboard/challenge_dashboard_.ipynb)
 . 
 
-https://plot.ly/dashboard/psmith1223:8/view
+https://plot.ly/dashboard/psmith1223:7/view
+
+**Execution**
+
+To run the model from start to finish, first, run prep_data.py.  Then, simply run train_dmn.
+
+If training is being resumed instead, add the argument "resume = True" to the ss function at like 99 in dmn.py.
+
+The output from the training is store in the data folder.  Model variables relevant to TensorFlow are stored in the variables folder.
